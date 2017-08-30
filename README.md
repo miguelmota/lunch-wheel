@@ -2,7 +2,7 @@
 
 > A lunch wheel for when you can't decide.
 
-<img src="./screencast.gif" width="700">
+<img src="./screencast.gif" width="400">
 
 # Requirements
 
