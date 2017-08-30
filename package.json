@@ -1,6 +1,6 @@
 {
   "name": "lunch-wheel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lunch wheel for when you can't decide.",
   "bin": {
     "lunch": "bin/www"
