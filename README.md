@@ -24,6 +24,14 @@ $ lunch
 
 Then head over to [http://localhost:9090/](http://localhost:9090/)
 
+# Development
+
+Build client scripts
+
+```bash
+npm run watch
+```
+
 # License
 
 MIT
