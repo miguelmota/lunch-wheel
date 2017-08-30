@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "watch": "watchify client.js -o public/bundle.js"
+    "watch": "watchify src/client.js -o public/bundle.js"
   },
   "repository": {
     "type": "git",

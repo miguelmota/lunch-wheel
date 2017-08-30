@@ -1,3 +1,4 @@
+const path = require('path')
 const http = require('http')
 const express = require('express')
 const WebSocket = require('ws')
@@ -6,7 +7,7 @@ const open = require('open')
 const BigRedButton = require('big-red-button')
 
 const app = express()
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.resolve(__dirname, '..', 'public')))
 
 const port = process.env.PORT || 9090
 const server = http.createServer(app)

@@ -1,47 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-const chromatic = require('d3-scale-chromatic')
-
-const PrizeWheel = require('prize-wheel')
-
-const settings = {
-  el: '#wheel',
-  members: ['Samosa House', 'Fiesta Brava', 'Komodo', 'Cafe Pier 212', `George's`, 'L&L Hawaiin', `Morfia's`, 'In-N-Out', 'Chic-fil-A'],
-  colors: chromatic.schemeSet3,
-  radius: 250
-}
-
-const wheel = new PrizeWheel(settings)
-
-wheel.init()
-
-const spinButton = document.querySelector('.Spin')
-const output = document.querySelector('.WheelOutput')
-
-spinButton.addEventListener('click', (event) => {
-  event.preventDefault()
-  output.textContent = ''
-
-  wheel.spin(member => {
-    output.innerHTML = `Winner:<br /><strong>${member}</strong>`
-  })
-}, false)
-
-const {pathname, host, protocol}  = window.location
-const ws = new WebSocket(`${protocol === 'https:' ? `wss` : `ws`}://${host}${pathname}`)
-
-
-ws.addEventListener('message', event => {
-  const data = event.data
-
-  if (data === 'buttonPressed') {
-    spinButton.classList.toggle('active', true)
-  } else if (data === 'buttonReleased') {
-    spinButton.classList.toggle('active', false)
-    spinButton.click()
-  }
-})
-
-},{"d3-scale-chromatic":4,"prize-wheel":5}],2:[function(require,module,exports){
 // https://d3js.org/d3-color/ Version 1.0.3. Copyright 2017 Mike Bostock.
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
@@ -566,7 +523,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 // https://d3js.org/d3-interpolate/ Version 1.1.5. Copyright 2017 Mike Bostock.
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('d3-color')) :
@@ -1113,7 +1070,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 
-},{"d3-color":2}],4:[function(require,module,exports){
+},{"d3-color":1}],3:[function(require,module,exports){
 // https://d3js.org/d3-scale-chromatic/ Version 1.1.1. Copyright 2017 Mike Bostock.
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('d3-interpolate')) :
@@ -1556,7 +1513,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 
-},{"d3-interpolate":3}],5:[function(require,module,exports){
+},{"d3-interpolate":2}],4:[function(require,module,exports){
 (function(root) {
   'use strict';
 
@@ -1720,4 +1677,46 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })(this);
 
-},{}]},{},[1]);
+},{}],5:[function(require,module,exports){
+const PrizeWheel = require('prize-wheel')
+const chromatic = require('d3-scale-chromatic')
+
+const settings = {
+  el: '#wheel',
+  members: ['Samosa House', 'Fiesta Brava', 'Komodo', 'Cafe Pier 212', `George's`, 'L&L Hawaiin', `Morfia's`, 'In-N-Out', 'Chic-fil-A'],
+  colors: chromatic.schemeSet3,
+  radius: 250
+}
+
+const wheel = new PrizeWheel(settings)
+
+wheel.init()
+
+const spinButton = document.querySelector('.Spin')
+const output = document.querySelector('.WheelOutput')
+
+spinButton.addEventListener('click', (event) => {
+  event.preventDefault()
+  output.textContent = ''
+
+  wheel.spin(member => {
+    output.innerHTML = `Winner:<br /><strong>${member}</strong>`
+  })
+}, false)
+
+const {pathname, host, protocol}  = window.location
+const ws = new WebSocket(`${protocol === 'https:' ? `wss` : `ws`}://${host}${pathname}`)
+
+
+ws.addEventListener('message', event => {
+  const data = event.data
+
+  if (data === 'buttonPressed') {
+    spinButton.classList.toggle('active', true)
+  } else if (data === 'buttonReleased') {
+    spinButton.classList.toggle('active', false)
+    spinButton.click()
+  }
+})
+
+},{"d3-scale-chromatic":3,"prize-wheel":4}]},{},[5]);

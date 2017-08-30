@@ -1,6 +1,5 @@
-const chromatic = require('d3-scale-chromatic')
-
 const PrizeWheel = require('prize-wheel')
+const chromatic = require('d3-scale-chromatic')
 
 const settings = {
   el: '#wheel',
