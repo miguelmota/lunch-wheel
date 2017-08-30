@@ -1,0 +1,53 @@
+{
+  "name": "lunch-wheel",
+  "version": "0.0.1",
+  "description": "A lunch wheel for when you can't decide.",
+  "bin": {
+    "lunch": "bin/www"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "watchify client.js -o public/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miguelmota/lunch-wheel"
+  },
+  "keywords": [
+    "lunch",
+    "wheel",
+    "spin",
+    "roulette",
+    "big",
+    "red",
+    "button"
+  ],
+  "author": {
+    "name": "Miguel Mota",
+    "email": "hello@miguelmota.com",
+    "url": "https://miguelmota.com/"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/miguelmota/lunch-wheel/blob/master/LICENSE.md"
+  },
+  "bugs": {
+    "url": "https://github.com/miguelmota/lunch-wheel/issues"
+  },
+  "homepage": "https://github.com/miguelmota/lunch-wheel",
+  "devDependencies": {},
+  "preferGlobal": true,
+  "engines": {
+    "node": ">=7"
+  },
+  "dependencies": {
+    "big-red-button": "0.0.8",
+    "d3-scale-chromatic": "^1.1.1",
+    "express": "^4.15.4",
+    "open": "0.0.5",
+    "prize-wheel": "0.0.1",
+    "uuid": "^3.1.0",
+    "ws": "^3.1.0"
+  }
+}
