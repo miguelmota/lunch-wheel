@@ -71,6 +71,8 @@ ws.addEventListener('message', event => {
     body.classList.toggle('Blink', true)
   } else if (data === 'lidClosed') {
     body.classList.toggle('Blink', false)
-    wheel = createWheel()
+    if (!body.classList.contains('Spinning')) {
+      wheel = createWheel()
+    }
   }
 })

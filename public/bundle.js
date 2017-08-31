@@ -2390,11 +2390,15 @@ ws.addEventListener('message', event => {
     spinButton.classList.toggle('active', true)
   } else if (data === 'buttonReleased') {
     spinButton.classList.toggle('active', false)
+    body.classList.toggle('Blink', false)
     spinButton.click()
   } else if (data === 'lidRaised') {
     body.classList.toggle('Blink', true)
   } else if (data === 'lidClosed') {
     body.classList.toggle('Blink', false)
+    if (!body.classList.contains('Spinning')) {
+      wheel = createWheel()
+    }
   }
 })
 
