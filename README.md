@@ -2,7 +2,11 @@
 
 > A lunch wheel for when you can't decide.
 
+Example showing the button
+
 <img src="./screencast_button.gif" width="400">
+
+Current retro theme
 
 <img src="./screencast_retro.gif" width="600">
 
