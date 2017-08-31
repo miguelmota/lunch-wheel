@@ -50,12 +50,12 @@ a:focus {
   align-items: center;
 }
 
-body.Spinning .Container {
-  background: rgba(0,0,0,0.9);
-}
-
 body.Blink .Container {
   animation: blink normal 1.5s infinite ease-in-out;
+}
+
+body.Spinning .Container {
+  background: rgba(0,0,0,0.9);
 }
 
 .Content {
