@@ -2,7 +2,9 @@
 
 > A lunch wheel for when you can't decide.
 
-<img src="./screencast.gif" width="400">
+<img src="./screencast_button.gif" width="400">
+
+<img src="./screencast.gif" width="700">
 
 # Requirements
 
@@ -19,7 +21,7 @@ npm install -g lunch-wheel
 Run server
 
 ```bash
-$ lunch
+$ lunch-wheel
 ```
 
 Then head over to [http://localhost:9090/](http://localhost:9090/)

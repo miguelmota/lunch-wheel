@@ -4,21 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
   <title>Lunch Wheel</title>
+  <link rel="stylesheet" href="fonts/colorsofautumn/stylesheet.css">
+  <link rel="stylesheet" href="fonts/sfalienc/stylesheet.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="Container">
-    <div class="Header">
-      <h1>Lunch Wheel</h1>
+    <div class="Content">
+      <div class="Header">
+        <h1><span>Spin the</span>Lunch Wheel</h0>
+      </div>
+      <div class="WheelContainer">
+        <div class="ArrowDown"></div>
+        <canvas id="canvas" class="WheelCanvas" width="434" height="434"></canvas>
+        <div class="WheelCircles"></div>
+        <output class="WheelOutput"></output>
+      </div>
+      <section class="Actions">
+        <button class="SpinButton Punch">Spin!</button>
+      </section>
     </div>
-    <div class="WheelContainer">
-      <canvas id="wheel"></canvas>
-      <output class="WheelOutput"></output>
-    </div>
-    <section class="Actions">
-      <button class="Spin Punch">Spin!</button>
-    </section>
   </div>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   <script src="bundle.js"></script>
 </body>
 </html>

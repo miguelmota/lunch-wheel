@@ -1,8 +1,34 @@
+@keyframes blink {
+  0% {
+    background: rgba(0,0,0,0.6)
+  }
+  50% {
+    background: rgba(60,0,0,0.6)
+  }
+  100% {
+    background: rgba(0,0,0,0.6)
+  }
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
 body {
- -webkit-box-sizing: border-box;
- -moz-box-sizing: border-box;
- box-sizing: border-box;
- font: 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font: 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+  background: #1F1C1D url(./assets/city.gif) no-repeat center center;
+  background-size: cover;
 }
 
 a,
@@ -14,12 +40,47 @@ a:focus {
 }
 
 .Container {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  transition: all 0.5s ease-out;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.Spinning .Container {
+  background: rgba(0,0,0,0.9);
+}
+
+body.Blink .Container {
+  animation: blink normal 1.5s infinite ease-in-out;
+}
+
+.Content {
 }
 
 .Header {
   text-align: center;
   margin: 0 0 40px 0;
+  font-family: 'sf_alien_encountersitalic', sans-serif;
+  font-size: 26px;
+  margin: 0;
+  color: #1bf4ff;
+  text-shadow: 2px 4px #c100ff;
+  text-transform: uppercase;
+  margin: 0 auto 25px auto;
+}
+
+.Header span {
+  font-family: 'colors_of_autumnregular', sans-serif;
+  font-size: 26px;
+  color: #bf65ff;
+  display: block;
+  text-shadow: none;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
 }
 
 .WheelContainer {
@@ -35,17 +96,81 @@ a:focus {
   transform: translate(-50%, -50%);
   font-size: 14px;
   line-height: 1.6;
+  color: #fff;
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5 ease-out;
+  opacity: 0;
+  font-weight: bold;
+}
+
+.WheelOutput.Show {
+  opacity: 1;
+}
+
+.WheelCircles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 170px;
+  height: 170px;
+  background-image: url(./assets/circles.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 200px auto;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.5s ease-out;
+}
+
+body.Spinning .WheelCircles {
+  opacity: 1;
+}
+
+.WheelCanvas {
+
+}
+
+.ArrowDown {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 30px solid #fff;
+  transform: translate(-50%, -10px);
+  opacity: 0.5;
+  transition: all 0.5s ease-out;
+}
+
+body.Spinning .ArrowDown {
+  transform: translate(-50%, 0);
+  opacity: 1;
 }
 
 .Actions {
   display: block;
   padding: 10px;
-  margin: 20px 0 50px 0;
+  margin: 20px 0 0 0;
   text-align: center;
 }
 
-.Spin {
+.SpinButton {
   display: inline-block;
+  transition: all 0.5s ease-out;
+}
+
+body.Spinning .SpinButton {
+  opacity: 0.2;
 }
 
 .Punch {
@@ -64,18 +189,42 @@ a:focus {
   text-align: center;
   text-shadow: 0 -1px 1px #1e2d4d;
   width: 150px;
--webkit-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
 }
 .Punch:hover,
 .Punch.hover {
   -webkit-box-shadow: inset 0 0 20px 1px #87adff, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
   box-shadow: inset 0 0 20px 1px #87adff, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
-  cursor: pointer; }
+cursor: pointer; }
 .Punch:active,
 .Punch.active {
   -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
   box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
   top: 5px;
+}
+
+.RetroButton {
+  display: inline-block;
+  font-family: 'sf_alien_encountersitalic', sans-serif;
+  font-size: 22px;
+  margin: 0;
+  color: #bf65ff;
+  text-shadow: 2px 4px #6e00ff;
+  cursor: pointer;
+  text-decoration: none;
+  background: #f58aff;
+  padding: 20px;
+  box-shadow: 5px 5px 0 #e000ff;
+  transition: all 0.2s ease-out;
+  margin: 0 0 40px 0;
+  letter-spacing: 2px;
+}
+
+.RetroButton:hover,
+.RetroButton.hover {
+  color: #e365ff;
+  background: #da8aff;
+  box-shadow: 8px 8px 0 #a900ff;
 }
 
 .Footer {

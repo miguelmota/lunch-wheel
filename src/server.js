@@ -15,7 +15,13 @@ const wss = new WebSocket.Server({ server });
 const socks = {}
 
 function start() {
-  const button = new BigRedButton.BigRedButton(0)
+  let button = null
+
+  try {
+    button = new BigRedButton.BigRedButton(0)
+  } catch (error) {
+    console.error('No big red button found')
+  }
 
   server.listen(port , () => {
     console.log(`Server on port ${port}`)
@@ -23,25 +29,27 @@ function start() {
     open(`http://localhost:${port}`);
   })
 
-  button.on('buttonPressed', () => {
-    console.log('Button pressed')
-    send('buttonPressed')
-  })
+  if (button) {
+    button.on('buttonPressed', () => {
+      console.log('Button pressed')
+      send('buttonPressed')
+    })
 
-  button.on('buttonReleased', () => {
-    console.log('Button released')
-    send('buttonReleased')
-  })
+    button.on('buttonReleased', () => {
+      console.log('Button released')
+      send('buttonReleased')
+    })
 
-  button.on('lidRaised', () => {
-    console.log('Lid raised')
-    send('lidRaised')
-  })
+    button.on('lidRaised', () => {
+      console.log('Lid raised')
+      send('lidRaised')
+    })
 
-  button.on('lidClosed', () => {
-    console.log('Lid closed')
-    send('lidClosed')
-  })
+    button.on('lidClosed', () => {
+      console.log('Lid closed')
+      send('lidClosed')
+    })
+  }
 }
 
 function send(data) {
