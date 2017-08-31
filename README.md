@@ -4,7 +4,7 @@
 
 <img src="./screencast_button.gif" width="400">
 
-<img src="./screencast.gif" width="700">
+<img src="./screencast_retro.gif" width="600">
 
 # Requirements
 
