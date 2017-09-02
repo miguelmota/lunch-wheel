@@ -97,12 +97,6 @@ body.Spinning .Container {
   text-align: center;
 }
 
-@media (max-width: 420px) {
-  .WheelContainer {
-    transform: scale(0.7);
-  }
-}
-
 .WheelResult {
   display: block;
   position: absolute;
@@ -151,6 +145,23 @@ body.Spinning .WheelCircles {
 
 .WheelCanvas {
 
+}
+
+@media (max-width: 420px) {
+  .WheelCanvas {
+    width: 305px;
+    height: 305px;
+  }
+
+  .WheelCircles {
+    width: 120px;
+    height: 120px;
+  }
+
+  .WheelResult {
+    width: 65px;
+    height: 65px;
+  }
 }
 
 .ArrowDown {
@@ -245,3 +256,12 @@ cursor: pointer; }
 .Footer {
   font-size: 12px;
   text-align: center;
+}
+
+.ForkLink {
+  font-size: 12px;
+  color: rgb(94, 67, 117);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

@@ -97,8 +97,8 @@ let wheel = createWheel()
 window.alertPrize = showResult
 spinButton.addEventListener('click', onSpinClick, false)
 
-const {pathname, host, protocol}  = window.location
-const ws = new WebSocket(`${protocol === 'https:' ? `wss` : `ws`}://${host}${pathname}`)
+const {host, protocol}  = window.location
+const ws = new WebSocket(`${protocol === 'https:' ? `wss` : `ws`}://${host}/`)
 
 ws.addEventListener('message', onMessage)
 
