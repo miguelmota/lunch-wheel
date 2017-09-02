@@ -2,6 +2,8 @@
 
 > A lunch wheel for when you can't decide.
 
+[https://lab.miguelmota.com/lunch-wheel](https://lab.miguelmota.com/lunch-wheel)
+
 Example showing the button
 
 <img src="./screencast_button.gif" width="400">
@@ -29,6 +31,14 @@ $ lunch-wheel
 ```
 
 Then head over to [http://localhost:9090/](http://localhost:9090/)
+
+### Update segments
+
+Open up the console and do:
+
+```javascript
+window.lunchWheel.segments(['Burgers', 'Tacos', 'Ramen', 'Burritos', 'Seafood', 'Salad'])
+```
 
 # Development
 

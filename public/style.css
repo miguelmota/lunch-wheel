@@ -12,9 +12,7 @@
 
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  uox-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -23,10 +21,11 @@ html,
 body {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  font: 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+  font: 20px/1 'helvetica neue', helvetica, arial, sans-serif;
   background: #1F1C1D url(./assets/city.gif) no-repeat center center;
   background-size: cover;
 }
@@ -44,7 +43,6 @@ a:focus {
   height: 100%;
   background: rgba(0,0,0,0.6);
   transition: all 0.5s ease-out;
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,12 +82,28 @@ body.Spinning .Container {
   letter-spacing: 2px;
 }
 
+@media (max-width: 420px) {
+  .Header {
+    font-size: 18px;
+  }
+
+  .Header span {
+    font-size: 18px;
+  }
+}
+
 .WheelContainer {
   position: relative;
   text-align: center;
 }
 
-.WheelOutput {
+@media (max-width: 420px) {
+  .WheelContainer {
+    transform: scale(0.7);
+  }
+}
+
+.WheelResult {
   display: block;
   position: absolute;
   top: 50%;
@@ -111,7 +125,7 @@ body.Spinning .Container {
   font-weight: bold;
 }
 
-.WheelOutput.Show {
+.WheelResult.Show {
   opacity: 1;
 }
 
@@ -185,7 +199,7 @@ body.Spinning .SpinButton {
   -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
   box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
   color: #fff;
-  font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+  font: bold 20px/1 'helvetica neue', helvetica, arial, sans-serif;
   padding: 10px 0 12px 0;
   text-align: center;
   text-shadow: 0 -1px 1px #1e2d4d;
