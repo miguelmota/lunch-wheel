@@ -13,8 +13,10 @@ let restaurants = null
 
 const defaultRestaurants = ['Samosa House', 'Fiesta Brava', 'Komodo', 'Cafe 212 Pier', `George's`, 'L&L Hawaiian', `Morfia's`, 'In-N-Out', 'Chic-fil-A', 'Thai vegan', 'Subway', 'JINYA Ramen', 'Taco Truck', `Jersey Mike's`]
 
+const localStorageKey = 'lunchwheel:segments'
+
 try {
-  restaurants = JSON.parse(localStorage.getItem('restaurants'))
+  restaurants = JSON.parse(localStorage.getItem(localStorageKey))
 } catch (error) {}
 
 if (!restaurants) {
@@ -33,7 +35,7 @@ lunchWheel.segments = function (list) {
   restaurants = list
 
   try {
-    localStorage.setItem('restaurants', JSON.stringify(list))
+    localStorage.setItem(localStorageKey, JSON.stringify(list))
   } catch (error) {
 
   }
