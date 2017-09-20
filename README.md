@@ -2,7 +2,9 @@
 
 > A lunch wheel for when you can't decide.
 
-[https://lab.miguelmota.com/lunch-wheel](https://lab.miguelmota.com/lunch-wheel)
+# Demo
+
+**[https://lab.miguelmota.com/lunch-wheel](https://lab.miguelmota.com/lunch-wheel)**
 
 Example showing the button
 
