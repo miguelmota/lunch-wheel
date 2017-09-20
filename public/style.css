@@ -72,7 +72,7 @@ body.Spinning .Container {
   margin: 0 auto 25px auto;
 }
 
-.Header span {
+.HeaderSpinText {
   font-family: 'colors_of_autumnregular', sans-serif;
   font-size: 26px;
   color: #bf65ff;
@@ -80,6 +80,9 @@ body.Spinning .Container {
   text-shadow: none;
   margin-bottom: 10px;
   letter-spacing: 2px;
+}
+
+.HeaderWheelName {
 }
 
 @media (max-width: 420px) {

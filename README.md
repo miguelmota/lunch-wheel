@@ -40,6 +40,14 @@ Open up the console and do:
 window.lunchWheel.segments(['Burgers', 'Tacos', 'Ramen', 'Burritos', 'Seafood', 'Salad'])
 ```
 
+### Update wheel name
+
+Open up the console and do:
+
+```javascript
+window.lunchWheel.name(['Dinner Wheel'])
+```
+
 # Development
 
 Build client scripts
@@ -47,6 +55,12 @@ Build client scripts
 ```bash
 npm run watch
 ```
+
+# FAQ
+
+- Q: It isn't detecting my big red button!
+
+  - A: Plug in the USB first and then restart server.
 
 # License
 
