@@ -64,6 +64,10 @@ npm run watch
 
   - A: Plug in the USB first and then restart server.
 
+- Q: It's not detecting the button on Linux!
+
+  - A: You might have to run as root. Take a look at the [big-red-button](https://github.com/miguelmota/big-red-button) repo for more help info.
+
 # License
 
 MIT
