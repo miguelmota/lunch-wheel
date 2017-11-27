@@ -2482,21 +2482,21 @@ function onMessage (event) {
 const clock = document.querySelector('.clock')
 
 function startTime () {
-  let today = new Date()
+  const today = new Date()
   let h = today.getHours()
   let m = today.getMinutes()
   let s = today.getSeconds()
-  m = checkTime(m)
-  //s = checkTime(s)
-  let A = h > 12 ? 'PM' : 'AM'
-  h = (h > 12 ? h - 12 : h)
-  h = h < 10 ? '0' + h : h
-  clock.innerHTML = h + ':' + m + ':' + s + A
-  let t = setTimeout(startTime, 500)
+  const A = h > 12 ? 'PM' : 'AM'
+  h = pad(h > 12 ? h - 12 : h)
+  clock.innerHTML = h + ':' + pad(m) + ':' + pad(s) + A
+  setTimeout(startTime, 500)
 }
 
-function checkTime (i) {
-  if (i < 10) { i = '0' + i };
+function pad(i) {
+  if (i < 10) {
+    i = '0' + i
+  }
+
   return i
 }
 
