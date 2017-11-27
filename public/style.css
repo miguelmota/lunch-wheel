@@ -265,6 +265,16 @@ cursor: pointer; }
   font-size: 12px;
   color: rgb(94, 67, 117);
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.clock {
+  display: block;
+  font-size: 28px;
+  color: #9050c7;
+  position: absolute;
+  right: 20px;
+  bottom: 40px;
+  font-family: Consolas, "Lucida Console", monospace;
 }

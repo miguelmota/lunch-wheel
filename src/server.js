@@ -11,10 +11,10 @@ app.use(express.static(path.resolve(__dirname, '..', 'public')))
 
 const port = process.env.PORT || 9090
 const server = http.createServer(app)
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({ server })
 const socks = {}
 
-function start() {
+function start () {
   let button = null
 
   try {
@@ -23,10 +23,10 @@ function start() {
     console.error('No big red button found')
   }
 
-  server.listen(port , () => {
+  server.listen(port, () => {
     console.log(`Server on port ${port}`)
 
-    open(`http://localhost:${port}`);
+    open(`http://localhost:${port}`)
   })
 
   if (button) {
@@ -52,7 +52,7 @@ function start() {
   }
 }
 
-function send(data) {
+function send (data) {
   for (let id in socks) {
     const sock = socks[id]
 
